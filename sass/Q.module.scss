@@ -47,7 +47,7 @@ $light: #ECC132;
 .table {
     width: 100vw;
 
-    tr:nth-child(even) {
+    tr:nth-child(odd) {
         td {
             background-color: $light;
             padding: 1rem;
@@ -57,7 +57,7 @@ $light: #ECC132;
         }
     }
 
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
         td {
             background-color: #FFF;
             padding: 1rem;

@@ -63,9 +63,8 @@ const Home: NextPage = () => {
     const REGEX = /.+/g; //matches all full lines
     const HEADER_RX = /[A-Z,a-z,0-9, ^,]+/g;
     const ROUND_RX = /[A-Za-z0-9 &-]+/g;
-    const FB_RX = /Flt2/g;
 
-    if(input.match(FB_RX)?.length != 0) {
+    if(input.indexOf("Flt2") > 0) {
       setHas(true);
     } else {
       setHas(false);
@@ -90,6 +89,14 @@ const Home: NextPage = () => {
         round = {flight: roundInfo[1], teamA: roundInfo[2], teamB: roundInfo[4], roomCode: roundInfo[6], judgeName: roundInfo[7]};
       } else {
         round = {flight: roundInfo[2], teamA: roundInfo[3], teamB: roundInfo[5], roomCode: roundInfo[7], judgeName: roundInfo[8]};
+      }
+
+      if(ROUND_NO == "9") {
+        if(roundInfo[14]) {
+          round.judgeName = `${roundInfo[8]}, ${roundInfo[10]}, ${roundInfo[12]}, ${roundInfo[14]}, ${roundInfo[16]}`;
+        } else {
+          round.judgeName = `${roundInfo[8]}, ${roundInfo[10]}, ${roundInfo[12]}`;
+        }
       }
       
       console.log(roundInfo);
@@ -139,10 +146,11 @@ const Home: NextPage = () => {
           <table className={styles.table}>
             {hasFlightB ? (<>
               <tr style={{height: "1rem"}}><td style={{width:"50%"}} colSpan={5}>Flight A starts at {process(`${startTime}`, parseInt(startTime))}</td><td style={{width:"50%"}} colSpan={5}>Flight B starts at {process(`${parseInt(startTime)+100}`, parseInt(startTime)+100)}</td></tr>
-              <tr style={{height: "1rem"}}><td style={{width:"5%"}}>Flight</td><td style={{width:"10%"}}>Team A</td><td style={{width:"10%"}}>Team B</td><td style={{width:"12.5%"}}>Room Code</td><td style={{width:"12.5%"}}>Judge Name</td><td style={{width:"5%"}}>Flight</td><td style={{width:"10%"}}>Team A</td><td style={{width:"10%"}}>Team B</td><td style={{width:"12.5%"}}>Room Code</td><td style={{width:"12.5%"}}>Judge Name</td></tr>
+              <tr style={{height: "1rem"}}><td style={{width:"5%"}}>Flight</td><td style={{width:"10%"}}>Team A</td><td style={{width:"10%"}}>Team B</td><td style={{width:"12.5%"}}>Room</td><td style={{width:"12.5%"}}>Judges</td><td style={{width:"5%"}}>Flight</td><td style={{width:"10%"}}>Team A</td><td style={{width:"10%"}}>Team B</td><td style={{width:"12.5%"}}>Room</td><td style={{width:"12.5%"}}>Judges</td></tr>
               <DoubleFlightTable rounds={roundsA} alsoRounds={roundsB}/>
             </>) : (<>
-              <tr style={{height: "1rem"}}><td style={{width:"10%"}}>Flight</td><td style={{width:"20%"}}>Team A</td><td style={{width:"20%"}}>Team B</td><td style={{width:"25%"}}>Room Code</td><td style={{width:"25%"}}>Judge Name</td></tr>
+              <tr style={{height: "1rem"}}><td style={{width:"100%"}} colSpan={5}>Round starts at {process(`${startTime}`, parseInt(startTime))}</td></tr>
+              <tr style={{height: "1rem"}}><td style={{width:"10%"}}>Flight</td><td style={{width:"20%"}}>Team A</td><td style={{width:"20%"}}>Team B</td><td style={{width:"25%"}}>Room</td><td style={{width:"25%"}}>Judges</td></tr>
               <SingleFlightTable rounds={roundsA}/>
             </>)}
           </table>
