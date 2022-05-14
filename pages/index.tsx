@@ -127,6 +127,8 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="/icon.png"/>
       </Head>
       
+      <p><b>YOU SHOULD TRY THIS BEFORE THE TOURNAMENT STARTS. If there are any questions, contact <a href="mailto:anli@u.northwestern.edu">anli@u.northwestern.edu</a> or andrewli15 on WeChat.</b></p>
+
       <ol>
         How to use this tool:
         <li>From Tabroom, click "Reports". Download the "Horizonal Schematic". You will get a CSV file.</li>
