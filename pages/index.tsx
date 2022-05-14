@@ -107,6 +107,9 @@ const Home: NextPage = () => {
       }
     }
 
+    flightA = flightA.sort((a, b) => (a.judgeName > b.judgeName) ? 1 : -1);
+    flightB = flightB.sort((a, b) => (a.judgeName > b.judgeName) ? 1 : -1);
+
     setHeading(header);
     setRoundsA(flightA);
     setRoundsB(flightB);
