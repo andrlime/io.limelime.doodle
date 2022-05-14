@@ -50,7 +50,7 @@ $light: #ECC132;
     tr:nth-child(odd) {
         td {
             background-color: $light;
-            padding: 1rem;
+            padding: 0.5rem;
             color: #000;
             width: 100%;
             white-space: nowrap;
@@ -60,7 +60,7 @@ $light: #ECC132;
     tr:nth-child(even) {
         td {
             background-color: #FFF;
-            padding: 1rem;
+            padding: 0.5rem;
             color: #000;
             width: 100%;
             white-space: nowrap;

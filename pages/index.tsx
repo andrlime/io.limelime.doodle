@@ -143,6 +143,7 @@ const Home: NextPage = () => {
 
       <div style={{backgroundColor: "white", padding: "3rem", marginTop: "1rem", textAlign: "center"}}>
         <p style={{fontSize: "1.5rem", fontWeight: "900", margin: "0", color: "#0E397A"}}>{heading}</p>
+        <p style={{fontSize: "1.2rem", fontWeight: "900", margin: "0", color: "#0E397A"}}>Flip for sides</p>
 
         <div style={{display: "flex", flexDirection: "row", width: "80vw"}}>
           <table className={styles.table}>
