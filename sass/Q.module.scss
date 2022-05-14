@@ -1,0 +1,90 @@
+$black: #3A001E;
+$white: #FFF6F0;
+
+$dark: #0E397A;
+$light: #ECC132;
+
+//misc stuff
+.everything {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.four {
+    width: fit-content;
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    color: $dark;
+    font-size: 5rem;
+    font-weight: 200;
+
+    span {
+        font-weight: 900;
+        margin-right: 3rem;
+    }
+}
+
+.footer {
+    color: $dark;
+    padding: 1.2rem;
+    width: 100vw;
+    background-color: $white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    * {
+        text-align: center;
+    }
+}
+
+.table {
+    width: 100vw;
+
+    tr:nth-child(even) {
+        td {
+            background-color: $light;
+            padding: 1rem;
+            color: #000;
+            width: 100%;
+        }
+    }
+
+    tr:nth-child(odd) {
+        td {
+            background-color: #FFF;
+            padding: 1rem;
+            color: #000;
+            width: 100%;
+        }
+    }
+
+    tr:nth-child(1) {
+        td {
+            background-color: #FFF;
+            padding: 0.2rem;
+            color: #0E397A;
+            font-weight: 900;
+            width: 100%;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+    }
+
+    tr:nth-child(2) {
+        td {
+            background-color: $dark;
+            padding: 1rem;
+            color: #FFF;
+            font-weight: 900;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+    }
+}
