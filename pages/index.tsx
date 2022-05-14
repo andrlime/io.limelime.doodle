@@ -110,8 +110,6 @@ const Home: NextPage = () => {
       return `${time.charAt(0)}:${time.substring(1)}`
     } else if (value < 2400) {
       return `${time.substring(0,2)}:${time.substring(2)}`
-    } else {
-      process(`${value%2400}`, value%2400)
     }
   }
 
