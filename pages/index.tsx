@@ -81,7 +81,7 @@ const Home: NextPage = () => {
     let headerInfo = allRounds[0].match(HEADER_RX) || [];
     let header = `${headerInfo[0]} ${headerInfo[2]}`;
     let rounds = allRounds.slice(1);
-    const ROUND_NO = (headerInfo[2].match(/\d+/g) || [])[0] || "0";
+    const ROUND_NO = (headerInfo[2].match(/\d+/g) || [])[0] || "9"; //9 is code for elims
 
     for (const key in rounds) {
       let roundInfo = rounds[key].match(ROUND_RX) || [];
